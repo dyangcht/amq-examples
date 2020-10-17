@@ -51,9 +51,9 @@ Now when you use "Add to Project" button in the OpenShift console, you should se
 
 預設已使用 oc login 登入 OpenShift 4.x. 也使用 AMQ Streams 安裝了 Kafka Instances, Kafka Topic and Kafka User.
 
-Kafka Instance: my-cluster
-Kafka Toic: my-topc
-Kafka User: my-user
+#### Kafka Instance: my-cluster
+#### Kafka Toic: my-topc
+#### Kafka User: my-user
 
 匯出 Server 憑證及金鑰
 
