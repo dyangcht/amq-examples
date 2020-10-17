@@ -11,7 +11,7 @@ This repository contains a set of examples to be used with Red Hat AMQ messaging
 * [Apache Camel AMQP to Kafka Bridge](camel-amqp-kafka-bridge): Apache Camel implementation of an AMQP to Kafka Bridge
 * [Apache Camel AMQP TLS Consumer](camel-amqp-tls-consumer): Apache Camel AMQP component consumer using TLS connection
 * [Apache Camel AMQP TLS Producer](camel-amqp-tls-producer): Apache Camel AMQP component producer using TLS connection
-* [Apache Camel Kafka Component](camel-kafka-demo): Apache Camel Kafka component using TLS connection
+* [Apache Camel Kafka Component](camel-kafka-demo): Apache Camel Kafka component using TLS connection. 加上使用 Mutual Authentication 的設定
 * [Spring for Apache Kafka](kafka-demo): Spring application using the Spring for Apache Kafka project
 * [Quarkus Apache Kafka Extension](kafka-quarkus-producer): Quarkus application using the Kafka extension and MicroProfile messaging
 * [Quarkus Apache Kafka Streams Extension](kafka-streams-quarkus-rideshare): Quarkus application using the Kafka Streams extension and, Kogito for event processing
