@@ -49,11 +49,21 @@ Now when you use "Add to Project" button in the OpenShift console, you should se
 
 ### Running via command line only - Mutual Authentication
 
-預設已使用 oc login 登入 OpenShift 4.x. 也使用 AMQ Streams 安裝了 Kafka Instances, Kafka Topic and Kafka User.
+預設已使用 oc login 登入 OpenShift 4.x. 也使用 AMQ Streams 安裝了 Kafka Instances, Kafka Topic and Kafka User. 先安裝 AMQ Streams Operator
+
+    oc apply -f sub.yml
 
 #### Kafka Instance: my-cluster
-#### Kafka Toic: my-topc
+
+    oc apply -f kafka.yml
+
+#### Kafka Toic: my-topic
+
+    oc apply -f topic.yml
+
 #### Kafka User: my-user
+
+    oc apply -f kafkaUser.yml
 
 匯出 Server 憑證
 
