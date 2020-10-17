@@ -54,6 +54,15 @@ Kafka Instance: my-cluster
 Kafka Toic: my-topc
 Kafka User: my-user
 
+匯出 Server 憑證及金鑰
+
+    oc get secret my-cluster-cluster-ca-cert -o jsonpath='{.data.ca\.crt}' | base64 -d > ca.crt
+    mv ca.crt src/main/resources
+
+產生 JKS
+
+    keytool -import -trustcacerts -alias root -file src/main/resources/ca.crt -keystore src/main/resources/keystore.jks -storepass password -noprompt
+
 
 匯出 User 憑證及金鑰
 
@@ -68,6 +77,7 @@ P12(PKCS12)，二進位制格式，同時包含憑證和私鑰，一般會加上
 Java 一般使用 JKS 格式，所以也可以使用下列指令將 PKCS12 轉成 JKS
 
     keytool -importkeystore -srckeystore user.p12 -destkeystore user.jks -srcstoretype PKCS12 -deststoretype JKS -deststorepass 123456 -srcstorepass 123456 -noprompt
+    mv user.jks src/main/resources
 
 執行以下指令來測試 Producer 和 Consumer
 
