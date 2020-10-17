@@ -55,7 +55,7 @@ Now when you use "Add to Project" button in the OpenShift console, you should se
 #### Kafka Toic: my-topc
 #### Kafka User: my-user
 
-匯出 Server 憑證及金鑰
+匯出 Server 憑證
 
     oc get secret my-cluster-cluster-ca-cert -o jsonpath='{.data.ca\.crt}' | base64 -d > ca.crt
     mv ca.crt src/main/resources
