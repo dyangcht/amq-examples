@@ -57,7 +57,7 @@ Now when you use "Add to Project" button in the OpenShift console, you should se
 
     oc apply -f kafka.yml
 
-#### Kafka Toic: my-topic
+#### Kafka Topic: my-topic
 
     oc apply -f topic.yml
 
