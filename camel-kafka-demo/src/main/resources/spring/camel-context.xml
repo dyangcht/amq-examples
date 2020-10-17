@@ -6,6 +6,9 @@
     </bean>
     <camelContext id="camel" xmlns="http://camel.apache.org/schema/spring">
         <route id="consumer-route">
+            <!-- Original setting
+            <from id="kafka-consumer" uri="kafka:my-topic?securityProtocol=SSL&amp;sslTruststoreLocation=src/main/resources/keystore.jks&amp;sslTruststorePassword=password"/>
+            -->
             <!-- <from id="kafka-consumer" uri="kafka:my-topic?securityProtocol=SSL&amp;sslTruststoreLocation=src/main/resources/keystore.jks&amp;sslTruststorePassword=password&amp;sslKeystoreLocation=src/main/resources/user.p12&amp;sslKeystorePassword=123456&amp;sslKeystoreType=PKCS12"/> -->
             <from id="kafka-consumer" uri="kafka:my-topic?securityProtocol=SSL&amp;sslTruststoreLocation=src/main/resources/keystore.jks&amp;sslTruststorePassword=password&amp;sslKeystoreLocation=src/main/resources/user.jks&amp;sslKeystorePassword=123456&amp;sslKeystoreType=JKS"/>
             <log id="route-log" message="consumer >>> ${body}"/>
@@ -15,6 +18,9 @@
             <setBody id="route-setBody">
                 <simple>Hello World from camel-context.xml with ID ${id}</simple>
             </setBody>
+            <!-- Original setting
+            <to id="kafka1" uri="kafka:my-topic?securityProtocol=SSL&amp;sslTruststoreLocation=src/main/resources/keystore.jks&amp;sslTruststorePassword=password"/>
+            -->
             <!-- <to id="_kafka1" uri="kafka:my-topic?securityProtocol=SSL&amp;sslTruststoreLocation=src/main/resources/keystore.jks&amp;sslTruststorePassword=password&amp;sslKeystoreLocation=src/main/resources/user.p12&amp;sslKeystorePassword=123456&amp;sslKeystoreType=PKCS12"/> -->
             <to id="_kafka1" uri="kafka:my-topic?securityProtocol=SSL&amp;sslTruststoreLocation=src/main/resources/keystore.jks&amp;sslTruststorePassword=password&amp;sslKeystoreLocation=src/main/resources/user.jks&amp;sslKeystorePassword=123456&amp;sslKeystoreType=JKS"/>
             <log id="route-log-producer" message="producer >>> ${body}"/>
