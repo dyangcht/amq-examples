@@ -23,7 +23,8 @@
             <to id="kafka1" uri="kafka:my-topic?securityProtocol=SSL&amp;sslTruststoreLocation=src/main/resources/keystore.jks&amp;sslTruststorePassword=password"/>
             -->
             <!-- <to id="_kafka1" uri="kafka:my-topic?securityProtocol=SSL&amp;sslTruststoreLocation=src/main/resources/keystore.jks&amp;sslTruststorePassword=password&amp;sslKeystoreLocation=src/main/resources/user.p12&amp;sslKeystorePassword=123456&amp;sslKeystoreType=PKCS12"/> -->
-            <to id="_kafka1" uri="kafka:my-topic?securityProtocol=SSL&amp;sslTruststoreLocation=src/main/resources/keystore.jks&amp;sslTruststorePassword=password&amp;sslKeystoreLocation=src/main/resources/user.jks&amp;sslKeystorePassword=123456&amp;sslKeystoreType=JKS"/>
+            <!-- <to id="_kafka1" uri="kafka:my-topic?securityProtocol=SSL&amp;sslTruststoreLocation=src/main/resources/keystore.jks&amp;sslTruststorePassword=password&amp;sslKeystoreLocation=src/main/resources/user.jks&amp;sslKeystorePassword=123456&amp;sslKeystoreType=JKS"/> -->
+            <to id="_kafka1" uri="kafka:my-topic"/>
             <log id="route-log-producer" message="producer >>> ${body}"/>
         </route>
     </camelContext>
