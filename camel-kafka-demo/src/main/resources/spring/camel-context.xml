@@ -10,7 +10,8 @@
             <from id="kafka-consumer" uri="kafka:my-topic?securityProtocol=SSL&amp;sslTruststoreLocation=src/main/resources/keystore.jks&amp;sslTruststorePassword=password"/>
             -->
             <!-- <from id="kafka-consumer" uri="kafka:my-topic?securityProtocol=SSL&amp;sslTruststoreLocation=src/main/resources/keystore.jks&amp;sslTruststorePassword=password&amp;sslKeystoreLocation=src/main/resources/user.p12&amp;sslKeystorePassword=123456&amp;sslKeystoreType=PKCS12"/> -->
-            <from id="kafka-consumer" uri="kafka:my-topic?securityProtocol=SSL&amp;sslTruststoreLocation=src/main/resources/keystore.jks&amp;sslTruststorePassword=password&amp;sslKeystoreLocation=src/main/resources/user.jks&amp;sslKeystorePassword=123456&amp;sslKeystoreType=JKS"/>
+            <!-- <from id="kafka-consumer" uri="kafka:my-topic?securityProtocol=SSL&amp;sslTruststoreLocation=src/main/resources/keystore.jks&amp;sslTruststorePassword=password&amp;sslKeystoreLocation=src/main/resources/user.jks&amp;sslKeystorePassword=123456&amp;sslKeystoreType=JKS"/> -->
+            <from id="kafka-consumer" uri="kafka:my-topic"/>
             <log id="route-log" message="consumer >>> ${body}"/>
         </route>
         <route id="producer-route">
